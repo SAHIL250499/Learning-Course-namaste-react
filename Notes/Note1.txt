@@ -1,0 +1,10 @@
+Two packages can be installed using npm
+1)Dev dependency - used in development stage
+2)normal dependency - used in prod stage too
+
+
+Transitive dependency - When just installed parcel.Many other folders are installed in node  modules because they are dependency of parcel and dependency of dependency and so on.
+
+npm is used to installing the package
+
+npx is used to execute the package
