@@ -39,18 +39,19 @@ const Body = () => {
   return listOfRestaurant.length === 0 ? (
     <Shimmer />
   ) : (
-    <div className="body">
-      <div className="filter">
-        <div className="search">
+    <div className="body container mx-auto">
+      <div className="filter flex">
+        <div className="search m-4 p-4">
           <input
             type="text"
-            className="search-box"
+            className="search-box border border-solid border-black"
             value={searchText}
             onChange={(e) => {
               setSearchText(e.target.value);
             }}
           />
           <button
+            className="px-4 py-2 bg-green-100 m-4 rounded-lg"
             onClick={() => {
               //filter the restaurant cards and update the UI
               //searchText
@@ -67,24 +68,26 @@ const Body = () => {
             Search
           </button>
         </div>
-        <button
-          className="filter-btn"
-          onClick={() => {
-            //filter logic
+        <div className="search m-4 p-4 flex items-center">
+          <button
+            className="filter-btn  px-4 py-2 bg-gray-100 rounded-lg"
+            onClick={() => {
+              //filter logic
 
-            const filteredList = listOfRestaurant.filter(
-              (res) => res.data.avgRating > 4
-            );
+              const filteredList = listOfRestaurant.filter(
+                (res) => res.data.avgRating > 4
+              );
 
-            setfilteredRestaurant(filteredList);
+              setfilteredRestaurant(filteredList);
 
-            console.log(filteredList);
-          }}
-        >
-          Top Rated Restaurants
-        </button>
+              console.log(filteredList);
+            }}
+          >
+            Top Rated Restaurants
+          </button>
+        </div>
       </div>
-      <div className="res-container">
+      <div className="res-container flex flex-wrap">
         {filteredRestaurant.map((restaurant) => {
           return (
             <Link
