@@ -12,7 +12,6 @@ const useOnlineStatus = () => {
     });
   }, []);
   //boolean value
-  console.log(onlineStatus);
   return onlineStatus;
 };
 
